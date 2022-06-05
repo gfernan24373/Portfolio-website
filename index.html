@@ -3,242 +3,68 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>GF | Portfolio</title>
+	<title>Portfolio Website</title>
+	<link rel="shortcut icon" href="images/GF-logo.png" type="image/x-icon">
 	<link rel="stylesheet" href="styles.css">
-	<link rel="stylesheet" href="splide-4.0.1/dist/css/splide.min.css">
 </head>
 <body>
-<!-------------------------------------------------------------------------- About --------------------------------------------------------------------------->
-	<section id="about-me" class="main-container">
+<!-------------------------------------------------------- NAVBAR -------------------------------------------------------->
+<nav class="navbar">
+	
+	<div class="center wrapper-options" id="nav-opc">
+		<a href="#about-me">about</a>
+		<a href="#skills">skills</a>
+		<a href="#experience">experience</a>
+		<a href="#projects">projects</a>
+		<a href="https://gilbertofernandez18.wixsite.com/project1/blog" target="_blank">Blog</a>
+		<a href="#contact">contact</a>
+	</div>
+	<div class="center icon">
+		<i class="fa-solid fa-bars fa-xl" id="dropdown-icon"></i>
+		<i class="fa-solid fa-circle-half-stroke fa-xl"></i>
+	</div>
+	
+</nav>
 
-		<nav class="navbar" draggable="true">
-			<a href="https://github.com/gfernan24373" target="_blank"><i class="fa-brands fa-github fa-xl"></i></a>
-			<a href="https://www.linkedin.com/in/gilberto-fernandez-b15388120/" target="_blank"><i class="fa-brands fa-linkedin fa-xl"></i></a>
-			<a href="https://wa.me/message/CUDGT6YXNXNIJ1" target="_blank"><i class="fa-brands fa-whatsapp-square fa-xl"></i></a>
-			<a href="" target="_blank"><i class="fa-solid fa-envelope fa-xl"></i></a>
-		</nav>
-		<nav class="menu">
-			<a href=""><i class="fa-brands fa-bootstrap fa-2xl"></i></a>
-			<div class="container-menu">
-				<a href="#about-me">about</a>
-				<a href="#skills">skills</a>
-				<a href="#experience">experience</a>
-				<a href="#projects">projects</a>
-				<a href="https://gilbertofernandez18.wixsite.com/project1/blog" target="_blank">Blog</a>
-				<a href="#contact">contact</a>
-			</div>
-			<button class="btn-mode"><i class="fa-solid fa-circle-half-stroke fa-2xl"></i></button>
-		</nav>
-		<div class="container">
-			<h1 class="title">ABOUT ME</h1>
-			<div class="introduction">
-				<h5>Hi, my name is Gilberto Fernández, I’m System Engineer from “Universidad de Oriente Núcleo Anzoátegui” University, Venezuela. I have a lot of experience working like a helpdesk or support agent, solving and analyzing customers IT requirements in a centralized IT software platform in the Engineering Field for EPC (Engineering, Procurement and Construction) Projects. For now, I’m working on my developer skills, learning a lot of CSS, Javascript, ES6, Python and some Frameworks like Bootstrap, Tailwind, Flask, Django and Express. <br><br> Since now and for the upcoming years, my main goal is start working like a Front-End Developer in a Organization with Interesting and challenging web/software development project. Like a tennis fan who enjoys seeing and playing matches with high performance players, I like to compete and learn from the best. So… If you’re reading this and need a great teammate, feel free to keep reading about me (Found something interesting?, contact me as soon as possible).
-				</h5>
-				<img src="images/profile.PNG" alt="">
-			</div>	
-		</div>
-	</section>
-<!------------------------------------------------------------------------ Skills -------------------------------------------------------------------------->
-	<section id="skills" class="main-container">
-		<div class="container-card">
-			<div class="card">
-				<h3 class="subtitle">HTML/CSS</h3>
-				<div class="card-content">
-					<ol>
-						<li>Strong Knowledges structuring and organizing HTML content.</li>
-						<br>
-						<li>Knowledges about file organization, specificity, selectors, custom properties, media queries, box model, positioning and stacking elements.</li>
-						<br>
-						<li>Flexbox and Grid understanding.</li>
-						<br>
-						<li>Basic transitions and animations.</li>
-						<br>
-						<li>Fundamentals about CSS Frameworks like Bootstrap, Tailwind and Bulma.</li>
-						<br>
-						<li>Create Accordion, Carousel, Card, Modal, Progress Bar, Navbar, Container, icons, images, and other components with pure CSS and Bootstrap.</li>
-					</ol>
-				</div>
-			</div>
-			<div class="card">
-				<h3 class="subtitle">JavaScript</h3>
-				<div class="card-content">
-					<ol>
-						<li>Understanding about identifiers: variables, keywords, properties and functions. Types, values and variables.</li>
-						<br>
-						<li>ES6 Fundamentals (Arrow function, promise, const and let, template String and spread operator).</li>
-						<br>
-						<li>Web Browser: scripting document, scripting CSS, events handlers, Web Storage and Networking.</li>
-						<br>
-						<li>Fundamentals about NodeJS and Express.</li>
-					</ol>
-				</div>
-			</div>
-			<div class="card">
-				<h3 class="subtitle">Python</h3>
-				<div class="card-content">
-					<ol>
-						<li>Understanding about identifiers: variables, keywords, properties and functions. Types, values and variables.</li>
-						<br>
-						<li>Regular expression, HTTP and BeautifulSoup for web scrapping.</li>
-						<br>
-						<li>Connecting, creating, inserting, modifying and deleting tables in a DB.</li>
-						<br>
-						<li>Experimental knowledges with flask a Django.</li>
-					</ol>
-				</div>
-			</div>
-			<div class="card">
-				<h3 class="subtitle">SQL</h3>
-				<div class="card-content">
-					<ol>
-						<li>Relational DB with SQLite.</li>
-						<br>
-						<li>Understanding SQL Schema means.</li>
-						<br>
-						<li>Connecting, creating, inserting, modifying and deleting tables in a DB.</li>
-						<br>
-						<li>Fundamentals Statements like CREATE,INSERT, UPDATE, DELETE or ALTER.</li>
-					</ol>
-				</div>
-			</div>
-			<div class="scroll-signal"><i class="fa-solid fa-arrows-up-down fa-2xl"></i></div>
-		</div>
-		<div class="container-certifications">
-			<h1 class="title">Certifications</h1>
-			<p>Click to expand</p>
-			<section class="splide" aria-label="Splide Basic HTML Example">
-				<div class="splide__track">
-				<ul class="splide__list">
-					<li class="splide__slide"><img class="certificate" src="images/certificate1.png" alt=""></li>
-					<li class="splide__slide"><img class="certificate" src="images/certificate2.png" alt=""></li>
-					<li class="splide__slide"><img class="certificate" src="images/certificate3.png" alt=""></li>
-					<li class="splide__slide"><img class="certificate" src="images/certificate4.png" alt=""></li>
-					<li class="splide__slide"><img class="certificate" src="images/certificate5.png" alt=""></li>
-					<li class="splide__slide"><img class="certificate" src="images/certificate6.png" alt=""></li>
-				</ul>
-				</div>
-			</section>
-			<div class="modal">
-				<div class="modal-container">
-					<span class="close">&times;</span>
-					<img class="modal-img" src="images/certificate1.png" alt="">
-				</div>
-			</div>
-			<div class="modal">
-				<div class="modal-container">
-					<span class="close">&times;</span>
-					<img class="modal-img" src="images/certificate2.png" alt="">
-				</div>
-			</div>
-			<div class="modal">
-				<div class="modal-container">
-					<span class="close">&times;</span>
-					<img class="modal-img" src="images/certificate3.png" alt="">
-				</div>
-			</div>
-			<div class="modal">
-				<div class="modal-container">
-					<span class="close">&times;</span>
-					<img class="modal-img" src="images/certificate4.png" alt="">
-				</div>
-			</div>
-			<div class="modal">
-				<div class="modal-container">
-					<span class="close">&times;</span>
-					<img class="modal-img" src="images/certificate5.png" alt="">
-				</div>
-			</div>
-			<div class="modal">
-				<div class="modal-container">
-					<span class="close">&times;</span>
-					<img class="modal-img" src="images/certificate6.png" alt="">
-				</div>
-			</div>
-		</div>
-		
-	</section>
-<!----------------------------------------------------------------------- Work Experience ----------------------------------------------------------------------->
-	<section id="experience" class="main-container">
-		<div class="container-experience">
-			<button class="btn-animation title">WORK EXPERIENCE</button>
-			<div class="container-especification">
-				<h3 data-animation="one" class="subtitle">Job</h3>
-				<h3 data-animation="two" class="subtitle">Type</h3>
-				<h3 data-animation="three" class="subtitle">Organization</h3>
-				<h3 data-animation="four" class="subtitle">Field</h3>
-				<h3 data-animation="five" class="subtitle">Period</h3>
-			</div>
-			<div class="container-line">
-				<div data-animation="line1" class="line"></div>
-				<div data-animation="line2" class="line"></div>
-				<div data-animation="line3" class="line"></div>
-				<div data-animation="line4" class="line"></div>
-				<div data-animation="line5" class="line"></div>
-			</div>
-			<div class="container-head">
-				<div class="head">
-					<div data-animation="hone" class="spear"></div>
-				</div>
-				<div class="head">
-					<div data-animation="htwo" class="spear"></div>
-				</div>
-				<div class="head">
-					<div data-animation="hthree" class="spear"></div>
-				</div>
-				<div class="head">
-					<div data-animation="hfour" class="spear"></div>
-				</div>
-				<div class="head">
-					<div data-animation="hfive" class="spear"></div>
-				</div>
-			</div>
-			<div class="container-especification">
-				<p data-animation="p1">Service Desk (Helpdesk)</p>
-				<p data-animation="p2">Hybrid</p>
-				<p data-animation="p3">Inelectra S.A.C.A</p>
-				<p data-animation="p4">Engineering</p>
-				<p data-animation="p5">2017-2020</p>
-			</div>
-			<div class="responsibilities">
-				<h1 data-animation="r1" class="title">RESPONSIBILITIES</h1>
-				<h1 data-animation="r2" id="parentesis" class="title">{</h1>
-				<ul class="responsibilities-description">
-					<li data-animation="r3" class="subtitle">Response, attend and delegate users requests using ITIL Methodology in three access channels: phone calls, centralized software platform and emails.</li>
-					<li data-animation="r4" class="subtitle">Resolve local an remote incidents: connectivity network issues (ISP, WIFI, ADSL , IP phone, Printers and videoconference hardware tools), hardware and software issues (OS issues, hardware crashes, irregular apps behaviors, information recovery and predefined user dashboard deconfiguration on common apps).</li>
-					<li data-animation="r5" class="subtitle">monitoring network performance, daily checklist services verification and monthly backups applications on local servers.</li>
-					<li data-animation="r6" class="subtitle">Document and make tutorials (if necessary) of all the necessary tips to help in the continual improvement process.</li>
-				</ul>
-			</div>			
-		</div>			
-		
-	</section>
-	<section id="projects" class="main-container">
-		<div class="container-projects">
-			<h1 class="title">MY PROJECTS</h1>
-			<div class="projects">
-				<h3 class="subtitle">FAQ Accordion Card</h3>
-				<a href="https://gfernan24373.github.io/FAQ-Accordion-Card/" target="_blank">
-					<img class="responsive" src="images/project1.jpg" alt="">
-				</a>
-			</div>
-			<div class="projects">
-				<h3 class="subtitle">Interactive Rating Component</h3>
-				<a href="https://gfernan24373.github.io/Interactive-Rating-Component/" target="_blank">
-					<img class="responsive" src="images/project2.jpg" alt="">
-				</a>
-			</div>
+<!-------------------------------------------------------- ABOUT -------------------------------------------------------->
 
-			<div class="projects">
-				<h3 class="subtitle">Static Tennis Shop web page</h3>
-				<a href="#" target="_blank"><img class="responsive" src="images/project3.PNG" alt=""></a>
-				
+<section id="about-me" class="main-container">
+	<div class="center">
+		<h1 class="center title">ABOUT ME</h1>
+	</div>
+		<div class="center box-big">
+			<div class="wrapper-about">
+				<img src="images/profile.png" alt="profile picture" id="profile-picture">
+				<p>
+				Hi, my name is Gilberto Fernández, I’m System Engineer from “Universidad de Oriente Núcleo Anzoátegui” University, Venezuela. I have a lot of experience working like a helpdesk or support agent, solving and analyzing customers IT requirements in a centralized IT software platform in the Engineering Field for EPC (Engineering, Procurement and Construction) Projects. For now, I’m working on my developer skills, learning a lot of CSS, Javascript, ES6, Python and some Frameworks like Bootstrap, Tailwind, Flask, Django and Express. <br><br> Since now and for the upcoming years, my main goal is start working like a Front-End Developer in a Organization with Interesting and challenging web/software development project. Like a tennis fan who enjoys seeing and playing matches with high performance players, I like to compete and learn from the best. So… If you’re reading this and need a great teammate, feel free to keep reading about me (Found something interesting?, contact me as soon as possible).
+				</p>
 			</div>
 		</div>
-	</section>
-	<section id="contact" class="main-container">
-		<h1>WORKING ON...</h1>
-	</section>
-<script src="main.js"></script>
+		<div class="wrapper-dates">
+			<div class="center">
+				<h1>COUNTRY</h1>
+				<h1>VENEZUELA</h1>
+			</div>
+			<div class="center">
+				<h1>BIRTHDAY</h1>
+				<h1>06/14/1990</h1>
+			</div>
+			<div class="center">
+				<h1>CAREER</h1>
+				<h1 class="center">SYSTEM ENGINEER</h1>
+			</div>
+		</div>
+
+
+	
+</section>
+<section id="skills" class="main-container">
+	<div class="center">
+		<h1 class="center title">SKILLS</h1>
+	</div>
+</section>
+
+<script src="main2.js" type="text/javascript"></script>
 <script src="splide-4.0.1/dist/js/splide.min.js"></script>
 <script src="carousel.js"></script>
 <script src="https://kit.fontawesome.com/2ef60001ec.js" crossorigin="anonymous"></script>
