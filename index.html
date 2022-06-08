@@ -6,13 +6,14 @@
 	<title>Portfolio Website</title>
 	<link rel="shortcut icon" href="images/GF-logo.png" type="image/x-icon">
 	<link rel="stylesheet" href="styles.css">
+	<link rel="stylesheet" href="splide-4.0.1/dist/css/splide.min.css">
 </head>
 <body>
 <!-------------------------------------------------------- NAVBAR -------------------------------------------------------->
 <nav class="navbar">
 	
 	<div class="center wrapper-options" id="nav-opc">
-		<a href="#about-me">about</a>
+		<a href="#about-me" id="prueba">about</a>
 		<a href="#skills">skills</a>
 		<a href="#experience">experience</a>
 		<a href="#projects">projects</a>
@@ -32,38 +33,89 @@
 	<div class="center">
 		<h1 class="center title">ABOUT ME</h1>
 	</div>
-		<div class="center box-big">
-			<div class="wrapper-about">
-				<img src="images/profile.PNG" alt="profile picture" id="profile-picture">
-				<p>
-				Hi, my name is Gilberto Fernández, I’m System Engineer from “Universidad de Oriente Núcleo Anzoátegui” University, Venezuela. I have a lot of experience working like a helpdesk or support agent, solving and analyzing customers IT requirements in a centralized IT software platform in the Engineering Field for EPC (Engineering, Procurement and Construction) Projects. For now, I’m working on my developer skills, learning a lot of CSS, Javascript, ES6, Python and some Frameworks like Bootstrap, Tailwind, Flask, Django and Express. <br><br> Since now and for the upcoming years, my main goal is start working like a Front-End Developer in a Organization with Interesting and challenging web/software development project. Like a tennis fan who enjoys seeing and playing matches with high performance players, I like to compete and learn from the best. So… If you’re reading this and need a great teammate, feel free to keep reading about me (Found something interesting?, contact me as soon as possible).
-				</p>
-			</div>
+	<div class="center box-big">
+		<div class="wrapper-about">
+			<img src="images/profile.PNG" alt="profile picture" id="profile-picture">
+			<p>
+			Hi, my name is Gilberto Fernández, I’m System Engineer from “Universidad de Oriente Núcleo Anzoátegui” University, Venezuela. I have a lot of experience working like a helpdesk or support agent, solving and analyzing customers IT requirements in a centralized IT software platform in the Engineering Field for EPC (Engineering, Procurement and Construction) Projects. For now, I’m working on my developer skills, learning a lot of CSS, Javascript, ES6, Python and some Frameworks like Bootstrap, Tailwind, Flask, Django and Express. <br><br> Since now and for the upcoming years, my main goal is start working like a Front-End Developer in a Organization with Interesting and challenging web/software development project. Like a tennis fan who enjoys seeing and playing matches with high performance players, I like to compete and learn from the best. So… If you’re reading this and need a great teammate, feel free to keep reading about me (Found something interesting?, contact me as soon as possible).
+			</p>
 		</div>
-		<div class="wrapper-dates">
-			<div class="center">
-				<h1>COUNTRY</h1>
-				<h1>VENEZUELA</h1>
-			</div>
-			<div class="center">
-				<h1>BIRTHDAY</h1>
-				<h1>06/14/1990</h1>
-			</div>
-			<div class="center">
-				<h1>CAREER</h1>
-				<h1 class="center">SYSTEM ENGINEER</h1>
-			</div>
+	</div>
+	<div class="wrapper-dates">
+		<div class="center">
+			<h1>COUNTRY</h1>
+			<h1>VENEZUELA</h1>
 		</div>
-
-
-	
+		<div class="center">
+			<h1>BIRTHDAY</h1>
+			<h1>06/14/1990</h1>
+		</div>
+		<div class="center">
+			<h1>CAREER</h1>
+			<h1 class="center">SYSTEM ENGINEER</h1>
+		</div>
+	</div>	
 </section>
+
+<!-------------------------------------------------------- SKILLS -------------------------------------------------------->
+
 <section id="skills" class="main-container">
 	<div class="center">
 		<h1 class="center title">SKILLS</h1>
 	</div>
+	<div class="center">
+		<div class="wrapper-skills">
+			<div class="options">
+				<a href="#html" id="html"><i class="fa-brands fa-html5 fa-2xl"></i>HTML</a>
+				<a href="#"><i class="fa-brands fa-css3-alt fa-2xl"></i>CSS</a>
+				<a href="#javascript" id="javascript"><i class="fa-brands fa-js-square fa-2xl"></i>JAVASCRIPT</a>
+				<a href="#python" id="python"><i class="fa-brands fa-python fa-2xl"></i>PYTHON</a>
+				<a href="#sql" id="sql"><i class="fa-solid fa-database fa-2xl"></i>SQL</a>
+				<a href="#certificates" id="certificates"><i class="fa-solid fa-scroll"></i>CERTIFICATES</a>
+			</div>
+			<div class="skill-content" id="html-skills">
+				<p>- Strong Knowledges structuring and organizing HTML content.</p>
+				<p>- Knowledges about file organization, specificity, selectors, custom properties, media queries, box model, positioning and stacking elements.</p>
+				<p>- Flexbox and Grid understanding.</p>
+				<p>- Basic transitions and animations.</p>
+				<p>- Fundamentals about CSS Frameworks like Bootstrap, Tailwind and Bulma.</p>
+				<p>- Create Accordion, Carousel, Card, Modal, Progress Bar, Navbar, Container, icons, images, and other components with pure CSS and Bootstrap.</p>
+			</div>
+			<div class="hide" id="javascript-skills">
+				<p>- Understanding about identifiers: variables, keywords, properties and functions. Types, values and variables.</p>
+				<p>- ES6 Fundamentals (Arrow function, promise, const and let, template String and spread operator).</p>
+				<p>- Web Browser: scripting document, scripting CSS, events handlers, Web Storage and Networking.</p>
+				<p>- Fundamentals about NodeJS and Express.</p>
+			</div>
+			<div class="hide" id="python-skills">
+				<p>- Understanding about identifiers: variables, keywords, properties and functions. Types, values and variables.</p>
+				<p>- Regular expression, HTTP and BeautifulSoup for web scrapping.</p>
+				<p>- Connecting, creating, inserting, modifying and deleting tables in a DB.</p>
+				<p>- Experimental knowledges with flask a Django.</p>
+			</div>
+			<div class="hide" id="sql-skills">
+				<p>- Create Relational DB with SQLite.</p>
+				<p>- Understanding SQL Schema means.</p>
+				<p>- Connecting, creating, inserting, modifying and deleting tables in a DB.</p>
+				<p>- Fundamentals Statements like CREATE,INSERT, UPDATE, DELETE or ALTER.</p>
+			</div>
+			<div class="hide" id="certificates-images">
+				<section class="splide" aria-label="Splide Basic HTML Example">
+					<div class="splide__track">
+						<ul class="splide__list">
+							<li class="splide__slide"><img class="certificate" src="images/certificate1.png" alt=""></li>
+							<li class="splide__slide"><img class="certificate" src="images/certificate2.png" alt=""></li>
+							<li class="splide__slide"><img class="certificate" src="images/certificate3.png" alt=""></li>
+							<li class="splide__slide"><img class="certificate" src="images/certificate4.png" alt=""></li>
+							<li class="splide__slide"><img class="certificate" src="images/certificate5.png" alt=""></li>
+							<li class="splide__slide"><img class="certificate" src="images/certificate6.png" alt=""></li>
+						</ul>
+					</div>
+				</section>
+			</div>
+		</div>
+	</div>
 </section>
-
 <script src="main.js" type="text/javascript"></script>
 <script src="splide-4.0.1/dist/js/splide.min.js"></script>
 <script src="carousel.js"></script>
