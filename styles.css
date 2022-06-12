@@ -585,15 +585,14 @@ button {
     var(--direction, normal)
     var(--fillmode, forwards)
     var(--playstate, paused);
-    -webkit-animation:
-    var(--name, none)
-    var(--duration, 1000ms)
-    var(--timing, linear)
-    var(--delay, 0s)
-    var(--iteration, 1)
-    var(--direction, normal)
-    var(--fillmode, forwards)
-    var(--playstate, paused);
+    -webkit-animation-name: var(--name, none);
+    -webkit-animation-duration: var(--duration, 1000ms);
+    -webkit-animation-timing-function: var(--timing, linear);
+    -webkit-animation-delay: var(--delay, 0s);
+    -webkit-animation-iteration-count: var(--iteration, 1);
+    -webkit-animation-direction: var(--direction, normal);
+    -webkit-animation-fill-mode: var(--fillmode, forwards);
+    -webkit-animation-play-state: var(--playstate, paused);
 }
 
 /*SHOW SPECIFICATION INFORMATION (THIS WILL SHOW FIRST)*/
