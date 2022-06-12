@@ -37,7 +37,7 @@ body {
 	padding: 0;
 }
 
-a {
+a, span {
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -137,11 +137,17 @@ button {
 		padding: 5px;
 		grid-column-gap: 15px;
 		animation: dropdown 1000ms forwards;
+		-webkit-animation: dropdown 1000ms forwards;
 	}
 
 	@keyframes dropdown {
 		0% {min-height: 0; height: auto;}
 		100% {min-height: 60px; height: auto;}
+	}
+
+	@-webkit-keyframes dropdown {
+		0% { min-height: 0; height: auto; }
+		100% { min-height: 60px; height: auto; }
 	}
 
 	.wrapper-options {
@@ -157,10 +163,17 @@ button {
 		width: 80%;
 		height: auto;
 		animation: display 1000ms forwards;
+		-webkit-animation: display 1000ms forwards;
 	}
 
-		@keyframes display {
+	@keyframes display {
 		0% { opacity: 0; height: 0;}
+		50% { height: 90px; }
+		100% { opacity: 1; height: 90px; }
+	}
+
+	@-webkit-keyframes display {
+		0% { opacity: 0; height: 0; }
 		50% { height: 90px; }
 		100% { opacity: 1; height: 90px; }
 	}
@@ -169,6 +182,7 @@ button {
 		color: var(--text-select);
 		transform: scale(0.9);
 		transition: 800ms;
+		-webkit-transition: 800ms;
 	}
 
 	.icon i:nth-child(1) {
@@ -187,10 +201,6 @@ button {
 }
 
 /*----------------- ABOUT ----------------- */
-@keyframes effect {
-	0% { opacity: 0; }
-	100% { opacity: 1; }
-}
 
 #profile-picture {
 	width: 120px;
@@ -227,6 +237,7 @@ button {
 	position: absolute;
 	left: 8px;
 	animation: rotation 60s linear 0s infinite normal forwards;
+	-webkit-animation: rotation 60s linear 0s infinite normal forwards;
 }
 
 @keyframes rotation {
@@ -234,10 +245,9 @@ button {
 	100%{ transform: rotate(360deg); }
 }
 
-
-/* Add the animation: property to whichever element you want to animate */
-#elementToAnimate{
-    animation: yourAnimation 60s linear 0s infinite normal forwards;
+@-webkit-keyframes rotation {
+	0.0%{ transform: rotate(0deg); }
+	100%{ transform: rotate(360deg); }
 }
 
 .wrapper-dates {
@@ -258,9 +268,15 @@ button {
 .wrapper-dates .center:nth-child(1):hover, .wrapper-dates .center:nth-child(2):hover, .wrapper-dates .center:nth-child(3):hover {
 	cursor: pointer;
 	animation: border 1300ms infinite alternate forwards;
+	-webkit-animation: border 1300ms infinite alternate forwards;
 }
 
 @keyframes border {
+	0% { border-color: hsla(192, 70%, 43%, 1); }
+	100% { border-color: hsla(192, 70%, 43%, 0); }
+}
+
+@-webkit-keyframes border {
 	0% { border-color: hsla(192, 70%, 43%, 1); }
 	100% { border-color: hsla(192, 70%, 43%, 0); }
 }
@@ -273,7 +289,7 @@ button {
 	}
 
 	.box-big {
-		height:70%;
+		height:90%;
 		margin-bottom: var(--space);
 	}
 
@@ -282,6 +298,7 @@ button {
 	}
 	.wrapper-dates > img:nth-child(1), .wrapper-dates > img:nth-child(2), .wrapper-dates > img:nth-child(3) {
 		width: 80px;
+		height: 80px;
 		color: var(--primary-color);
 		border: 3px solid var(--primary-color);
 		background-color: lightgrey;
@@ -310,21 +327,21 @@ button {
 .options {
 	grid-area: skill;
 	display: grid;
-	justify-items: center;
 	grid-row-gap: 10px;
 	background-image: url(images/cool-bg.png);
 	border-top-left-radius: 30px;
 	border-bottom-left-radius: 26px;
 }
 
-.options > a {
-	width: 150px;
+.options > span {
 	display: flex;
 	justify-content: start;
 	column-gap: 5px;
+	margin-left: 30%;
 }
 
-.options > a:hover {
+.options > span:hover {
+	cursor: pointer;
 	color: var(--text-select);
 	transition: 800ms;
 }
@@ -373,7 +390,7 @@ button {
 
 /*Add Animation*/
 @-webkit-keyframes animatetop {
-    from {top:-300px; opacity:0} 
+    from {top:-300px; opacity:0;} 
     to {top:0; opacity:1}
 }
 
@@ -420,7 +437,7 @@ button {
 		height: 100%;
 	}
 
-	.options > a {
+	.options > span {
 		margin-left: 8px;
 	}
 
@@ -450,13 +467,28 @@ button {
 	position: relative;
 	z-index: var(--animation-btn);
 	animation: taunt 1500ms infinite alternate forwards, up 1000ms 100ms forwards paused;
+	-webkit-animation: taunt 1500ms infinite alternate forwards, up 1000ms 100ms forwards paused;
 }
 
 @keyframes up {
 	100% { transform: translateY(-135%); opacity: 1; }
 }
 
+@-webkit-keyframes up {
+	100% { transform: translateY(-135%); opacity: 1; }
+}
+
 @keyframes taunt {
+	0% { opacity: 0.2; transform: translate(5px); }
+	5% { transform: translate(-5px); }
+	20% { transform: translate(5px); }
+	30% { transform: translate(-5px); }
+	40% { transform: translate(5px); }
+	50% { transform: translate(-5px); }
+	100% { opacity: 1; }
+}
+
+@-webkit-keyframes taunt {
 	0% { opacity: 0.2; transform: translate(5px); }
 	5% { transform: translate(-5px); }
 	20% { transform: translate(5px); }
@@ -545,6 +577,15 @@ button {
 /*DEFAULT ANIMATION SETTING*/
 [data-animation] {
 	animation:
+    var(--name, none)
+    var(--duration, 1000ms)
+    var(--timing, linear)
+    var(--delay, 0s)
+    var(--iteration, 1)
+    var(--direction, normal)
+    var(--fillmode, forwards)
+    var(--playstate, paused);
+    -webkit-animation:
     var(--name, none)
     var(--duration, 1000ms)
     var(--timing, linear)
@@ -727,12 +768,26 @@ button {
 	100% { height: 50px; opacity: 1; }
 }
 
+@-webkit-keyframes appear {
+	0% { opacity: 0; }
+	100% { opacity: 1; }
+}
+
+@-webkit-keyframes linea {
+	0% { height: 0; opacity: 0; }
+	100% { height: 50px; opacity: 1; }
+}
+
 @media only screen and (max-width: 539px) {
 	#play {
 		width: 350px;
 	}
 
 	@keyframes up {
+		100% { transform: translateY(-218px); opacity: 1; }
+	}
+
+	@-webkit-keyframes up {
 		100% { transform: translateY(-218px); opacity: 1; }
 	}
 
@@ -843,9 +898,7 @@ button {
 		--name: appear;
 		--duration: 1250ms;
 		--delay: 3500ms;
-	}
-
-	
+	}	
 }
 
 /*----------------- PROJECTS ----------------- */
