@@ -25,6 +25,9 @@ const sql = document.querySelector('#sql');
 const sqlSkill = document.querySelector('#sql-skills');
 const certificate = document.querySelector('#certificates');
 const certificateImg = document.querySelector('#certificates-images');
+let modal = document.querySelectorAll('.modal');
+let slide = document.querySelectorAll('.splide__slide');
+let cerrar = document.querySelectorAll('.close');
 
 
 html.onclick = () => {
@@ -114,8 +117,46 @@ certificate.onclick = () => {
 	pythonSkill.classList.remove('skill-content');
 	pythonSkill.classList.add('hide');
 	sqlSkill.classList.remove('skill-content');
-	sqlSkill.classList.add('hide');
+	sqlSkill.classList.add('hide');		
 }
+
+/****************  Modal Certificates ****************/
+	
+for(let i = 0; i < modal.length; i++) {
+	slide[i].onclick = function() {
+		modal[i].style.display = 'block';
+	}
+	cerrar[i].onclick = function() {
+		modal[i].style.display = 'none';
+	}
+}
+window.onclick = function (e) {
+	if(e.target.style.display == 'block') {
+		e.target.style.display = 'none';
+	}
+}
+
+const experience = document.querySelector('#play');
+const releaseAnimation = document.querySelectorAll('[data-animation]');
+
+experience.onclick = () => {
+	let property = getComputedStyle(experience).getPropertyValue('animation-play-state');
+	if(property === 'running, paused') {
+		experience.style.webkitAnimationPlayState = 'paused, running';
+	}
+	releaseAnimation.forEach((val,i,arr) => {
+		property = getComputedStyle(arr[i]).getPropertyValue('animation-play-state');
+		if(property === 'paused') {
+			arr[i].style.webkitAnimationPlayState = 'running';
+		
+		}
+	});
+}
+
+
+
+
+
 
 // html.onclick = () => {
 // 	htmlSkill.innerHTML = `
