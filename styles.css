@@ -4,6 +4,16 @@
 	--primary-color: #219ebc;
 	--background: #f1faee;
 	--space: 20px;
+	--text-small: 10px;
+	--modal-bg: rgba(0,0,0,0.4);
+	--nav-position: 5;
+	--icon-position: 6;
+	--carousel-position: 1;
+	--modal-position: 7;
+	--close-position: 8;
+	--animation-btn-position: 1;
+	--animation-btn: 2;
+
 /*----------------- Navbar ----------------- */
 	--nav-background: #023047;
 	--text-select: #fff;
@@ -54,6 +64,17 @@ button {
 	background-color: var(--background);
 }
 
+.title {
+	width: 450px;
+	font: bolder 40px var(--font);
+	letter-spacing: 20px;
+	color: var(--primary-color);
+	border: 5px solid var(--primary-color);
+	border-radius: 30px;
+	background-image: url(images/cool-bg.png);
+	margin-bottom: var(--space);
+}
+
 .animated {
 	animation: animated 800ms forwards;
 }
@@ -84,7 +105,7 @@ button {
 	padding: 0 10px 0 10px;
 	position: fixed;
 	top: 0;
-	z-index: 1;
+	z-index: var(--nav-position);
 }
 
 .wrapper-options {
@@ -150,33 +171,22 @@ button {
 		transition: 800ms;
 	}
 
-	.icon i:nth-child(2) {
-		position: absolute;
-		bottom: -550px;
-		right: 20px;
-	}
-
 	.icon i:nth-child(1) {
 		display: block;
 		position: absolute;
 		right: 20px;
+		z-index: var(--icon-position);
 	}
 
+	.icon i:nth-child(2) {
+		position: absolute;
+		bottom: -550px;
+		right: 20px;
+		z-index: var(--icon-position);
+	}
 }
 
 /*----------------- ABOUT ----------------- */
-
-.title {
-	width: 450px;
-	font: bolder 40px var(--font);
-	letter-spacing: 20px;
-	color: var(--primary-color);
-	border: 5px solid var(--primary-color);
-	border-radius: 30px;
-	background-image: url(images/cool-bg.png);
-	margin-bottom: var(--space);
-}
-
 @keyframes effect {
 	0% { opacity: 0; }
 	100% { opacity: 1; }
@@ -192,8 +202,7 @@ button {
 
 .box-big {
 	width: 100%;
-	height: 42%;
-	margin-bottom: 80px;
+	height: 75%;
 }
 
 .wrapper-about {
@@ -212,16 +221,34 @@ button {
  	display: none;
 }
 
+[data-name="gf"] {
+	border-radius: 50%;
+	color: var(--text-select);
+	position: absolute;
+	left: 8px;
+	animation: rotation 60s linear 0s infinite normal forwards;
+}
+
+@keyframes rotation {
+	0.0%{ transform: rotate(0deg); }
+	100%{ transform: rotate(360deg); }
+}
+
+
+/* Add the animation: property to whichever element you want to animate */
+#elementToAnimate{
+    animation: yourAnimation 60s linear 0s infinite normal forwards;
+}
+
 .wrapper-dates {
 	display: flex;
 	justify-content: space-around;
 	width: 100%;
-	margin-top: ;
+	margin-top: 10px;
 }
 
-.wrapper-dates > .center:nth-child(1), .wrapper-dates > .center:nth-child(2), .wrapper-dates > .center:nth-child(3) {
-	flex-direction: column;
-	width: 260px;
+.wrapper-dates > img:nth-child(1), .wrapper-dates > img:nth-child(2), .wrapper-dates > img:nth-child(3) {
+	width: 160px;
 	color: var(--primary-color);
 	border: 3px solid var(--primary-color);
 	background-color: lightgrey;
@@ -246,18 +273,19 @@ button {
 	}
 
 	.box-big {
-		height: 65%;
+		height:70%;
 		margin-bottom: var(--space);
 	}
 
-	.wrapper-dates .center:nth-child(1), .wrapper-dates .center:nth-child(2), .wrapper-dates .center:nth-child(3) {
-		width: 130px;
-
+	.wrapper-about {
+		font-size: var(--text-small);
 	}
-
-	.wrapper-dates .center:nth-child(1) > h1, .wrapper-dates .center:nth-child(2) > h1, .wrapper-dates .center:nth-child(3) > h1 {
-		font-size: 12px;
-
+	.wrapper-dates > img:nth-child(1), .wrapper-dates > img:nth-child(2), .wrapper-dates > img:nth-child(3) {
+		width: 80px;
+		color: var(--primary-color);
+		border: 3px solid var(--primary-color);
+		background-color: lightgrey;
+		border-radius: 30px;
 	}
 }
 
@@ -322,31 +350,502 @@ button {
 	border-radius: 2rem;
 	background-color: var(--background);
 }
+.splide__track, .splide__list {
+	position: relative;
+	z-index: var(--carousel-position);
+}
+
+/*Modal certificates*/
+.modal {
+	display: none;
+	width: 100%;
+	height: 100%;
+	background-color: var(--modal-bg);
+	position: fixed;
+	z-index: var(--modal-position);
+	top:0;
+	left: 0;
+	-webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+}
+
+/*Add Animation*/
+@-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0} 
+    to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+    from {top:-16rem; opacity:0}
+    to {top:0; opacity:1}
+}
+
+.modal-container {
+	width: 70%;
+	height: 90vh;
+	position: relative;
+	left: 15%;
+	top: 5%;
+}
+
+.modal-img {
+	width: 100%;
+	height: 100%;
+}
+
+.close {
+	color: white;
+	font-size: 1.68rem;
+	font-weight: bold;
+	cursor: pointer;
+	position: fixed;
+	top: 0;
+	right: 0;
+	z-index: var(--close-position);
+}
 
 @media only screen and (max-width: 539px) {
 	.wrapper-skills {
-	display: grid;
-	grid-template-columns: 1fr 1fr 1fr;
-	grid-template-rows: 15px;
-	grid-template-areas: 
-	"skill skill skill"
-	"skill skill skill"
-	". description description"
-	". description description"
-	". description description"; 
-	width: 80%;
-	height: 300px;
-	border: 5px solid var(--primary-color);
-	border-radius: 30px;
+		grid-template-columns: 105px 1fr 1fr;
+		width: 80%;
+		height: 300px;
+		font-size: var(--text-small);
+		border: 5px solid var(--primary-color);
+		border-radius: 30px;
 	}
 
 	.options {
-		display: flex;
-		width: 100%;
+		height: 100%;
 	}
 
 	.options > a {
-		width: 50%;
+		margin-left: 8px;
 	}
 
+	.certificate {
+		width: 90%;
+	}
 }
+
+/*----------------- EXPERIENCE ----------------- */
+
+#experience {
+	position: relative;
+	overflow-y: hidden;
+}
+
+#animation-place {
+	width: 100%;
+	position: absolute;
+	top: 200px;
+	z-index: var(--animation-btn-position);
+}
+
+#play {
+	width: 500px;
+	text-align: center;
+	cursor: pointer;
+	position: relative;
+	z-index: var(--animation-btn);
+	animation: taunt 1500ms infinite alternate forwards, up 1000ms 100ms forwards paused;
+}
+
+@keyframes up {
+	100% { transform: translateY(-135%); opacity: 1; }
+}
+
+@keyframes taunt {
+	0% { opacity: 0.2; transform: translate(5px); }
+	5% { transform: translate(-5px); }
+	20% { transform: translate(5px); }
+	30% { transform: translate(-5px); }
+	40% { transform: translate(5px); }
+	50% { transform: translate(-5px); }
+	100% { opacity: 1; }
+}
+
+/*SETTING ANIMATION PROPERTIES*/
+.animation-specification {
+	display: flex;
+	justify-content: center;
+	width: 100%;
+}
+
+.animation-specification > h3, .animation-specification > p {
+	text-align: center;
+	width: 15%;
+	opacity: 0;
+}
+
+.animation-line {
+	display: flex;
+	justify-content: center;
+	text-align: center;
+	width: 100%;
+	position: relative;
+	right: 101px;
+}
+
+.line {
+	width: 15%;
+	height: 0;
+	border-right: 2px solid var(--primary-color);
+}
+
+.animation-arrow {
+	display: flex;
+	justify-content: center;
+}
+
+.arrow {
+	width: 15%;
+}
+
+.spear {
+	width: 0;
+	height: 0;
+	border-right: 10px solid transparent;
+	border-bottom: 20px solid var(--primary-color);
+	border-left: 10px solid transparent;
+	opacity: 0;
+	transform: rotate(180deg);
+	position: relative;
+	left: 90px;
+	bottom: 10px;
+}
+
+.responsibilities {
+	display: flex;
+	align-items: center;
+	padding: 1.5rem;
+	position: relative;
+	top: -55px;
+}
+
+#parentesis {
+	font-size: 20vw;
+	font-weight: 400;
+	color: var(--primary-color);
+	position: relative;
+	top: -20px;
+}
+
+.responsibilities-description {
+	display: grid;
+	text-align: left;
+	gap: 0.45rem;
+}
+
+.responsibilities :is(h1, li) {
+	opacity: 0;
+}
+
+/*DEFAULT ANIMATION SETTING*/
+[data-animation] {
+	animation:
+    var(--name, none)
+    var(--duration, 1000ms)
+    var(--timing, linear)
+    var(--delay, 0s)
+    var(--iteration, 1)
+    var(--direction, normal)
+    var(--fillmode, forwards)
+    var(--playstate, paused);
+}
+
+/*SHOW SPECIFICATION INFORMATION (THIS WILL SHOW FIRST)*/
+[data-animation="job"] {
+	--name: appear;
+	--duration: 1250ms;
+	--delay: 500ms;
+}
+
+[data-animation="type"] {
+	--name: appear;
+	--duration: 1250ms;
+	--delay: 700ms;
+}
+
+[data-animation="organization"] {
+	--name: appear;
+	--duration: 1250ms;
+	--delay: 900ms;
+}
+
+[data-animation="field"] {
+	--name: appear;
+	--duration: 1250ms;
+	--delay: 1100ms;
+}
+
+[data-animation="period"] {
+	--name: appear;
+	--duration: 1250ms;
+	--delay: 1300ms;
+}
+
+/*DISPLAY THE VERTICAL LINE OF THE ARROW FOR EACH SPECIFICATION (THIS WILL SHOW SECOND)*/
+[data-animation="line1"] {
+	--name: linea;
+	--duration: 1250ms;
+	--delay: 1500ms;
+}
+
+[data-animation="line2"] {
+	--name: linea;
+	--duration: 1250ms;
+	--delay: 1700ms;
+}
+
+[data-animation="line3"] {
+	--name: linea;
+	--duration: 1250ms;
+	--delay: 1900ms;
+}
+
+[data-animation="line4"] {
+	--name: linea;
+	--duration: 1250ms;
+	--delay: 2100ms;
+}
+
+[data-animation="line5"] {
+	--name: linea;
+	--duration: 1250ms;
+	--delay: 2300ms;
+}
+
+/*DISPLAY THE ARROW FOR EVERY LINE (3TH ANIMATION)*/
+
+[data-animation="arrow-one"] {
+	--name: appear;
+	--duration: 1250ms;
+	--delay: 2500ms;
+}
+
+[data-animation="arrow-two"] {
+	--name: appear;
+	--duration: 1250ms;
+	--delay: 2700ms;
+}
+
+[data-animation="arrow-three"] {
+	--name: appear;
+	--duration: 1250ms;
+	--delay: 2900ms;
+}
+
+[data-animation="arrow-four"] {
+	--name: appear;
+	--duration: 1250ms;
+	--delay: 3100ms;
+}
+
+[data-animation="arrow-five"] {
+	--name: appear;
+	--duration: 1250ms;
+	--delay: 3300ms;
+}
+
+/*DISPLAY SPECIFICATION DESCRIPTION (4TH ANIMATION)*/
+
+[data-animation="helpdesk"] {
+	--name: appear;
+	--duration: 1250ms;
+	--delay: 3500ms;
+}
+
+[data-animation="hybrid"] {
+	--name: appear;
+	--duration: 1250ms;
+	--delay: 3700ms;
+}
+
+[data-animation="inelectra"] {
+	--name: appear;
+	--duration: 1250ms;
+	--delay: 3900ms;
+}
+
+[data-animation="engineering"] {
+	--name: appear;
+	--duration: 1250ms;
+	--delay: 4100ms;
+}
+
+[data-animation="2017"] {
+	--name: appear;
+	--duration: 1250ms;
+	--delay: 4300ms;
+}
+
+[data-animation="responsibility-one"] {
+	--name: appear;
+	--duration: 1250ms;
+	--delay: 4500ms;
+}
+
+[data-animation="responsibility-two"] {
+	--name: appear;
+	--duration: 1250ms;
+	--delay: 4700ms;
+}
+
+[data-animation="responsibility-three"] {
+	--name: appear;
+	--duration: 1250ms;
+	--delay: 4900ms;
+}
+
+[data-animation="responsibility-four"] {
+	--name: appear;
+	--duration: 1250ms;
+	--delay: 5100ms;
+}
+
+[data-animation="responsibility-five"] {
+	--name: appear;
+	--duration: 1250ms;
+	--delay: 5300ms;
+}
+
+[data-animation="responsibility-six"] {
+	--name: appear;
+	--duration: 1250ms;
+	--delay: 5500ms;
+}
+
+@keyframes appear {
+	0% { opacity: 0; }
+	100% { opacity: 1; }
+}
+
+@keyframes linea {
+	0% { height: 0; opacity: 0; }
+	100% { height: 50px; opacity: 1; }
+}
+
+@media only screen and (max-width: 539px) {
+	#play {
+		width: 350px;
+	}
+
+	@keyframes up {
+		100% { transform: translateY(-218px); opacity: 1; }
+	}
+
+	.animation-specification {
+		display: grid;
+		justify-content: start;
+		grid-row-gap: 10px;
+		width: 100%;
+		margin-left: 20px;
+	}
+
+	.animation-specification:nth-child(4) {
+		margin: 0;
+		position: absolute;
+		left: 200px;
+		top: -15px;
+		grid-row-gap: 13px;
+	}
+
+	.animation-specification > p {
+		width: 150px;
+	}
+
+	#parentesis {
+		font-size: 22vh;
+		font-weight: 400;
+		color: var(--primary-color);
+		position: absolute;
+		top: -230px;
+		left: 150px;
+	}
+
+	.animation-line, .animation-arrow {
+		display: none;
+	}
+
+	.responsibilities {
+		display: block;
+		top: 20px;
+	}
+
+	.responsibilities-description {
+		width: 100%;
+	}
+
+
+	[data-animation="helpdesk"] {
+		--name: appear;
+		--duration: 1250ms;
+		--delay: 1700ms;
+	}
+
+	[data-animation="hybrid"] {
+		--name: appear;
+		--duration: 1250ms;
+		--delay: 1900ms;
+	}
+
+	[data-animation="inelectra"] {
+		--name: appear;
+		--duration: 1250ms;
+		--delay: 2100ms;
+	}
+
+	[data-animation="engineering"] {
+		--name: appear;
+		--duration: 1250ms;
+		--delay: 2300ms;
+	}
+
+	[data-animation="2017"] {
+		--name: appear;
+		--duration: 1250ms;
+		--delay: 2500ms;
+	}
+	
+	[data-animation="responsibility-one"] {
+		--name: appear;
+		--duration: 1250ms;
+		--delay: 2700ms;
+	}
+
+	[data-animation="responsibility-two"] {
+		--name: appear;
+		--duration: 1250ms;
+		--delay: 1500ms;
+	}
+
+	[data-animation="responsibility-three"] {
+		--name: appear;
+		--duration: 1250ms;
+		--delay: 2900ms;
+	}
+
+	[data-animation="responsibility-four"] {
+		--name: appear;
+		--duration: 1250ms;
+		--delay: 3100ms;
+	}
+
+	[data-animation="responsibility-five"] {
+		--name: appear;
+		--duration: 1250ms;
+		--delay: 3300ms;
+	}
+
+	[data-animation="responsibility-six"] {
+		--name: appear;
+		--duration: 1250ms;
+		--delay: 3500ms;
+	}
+
+	
+}
+
+/*----------------- PROJECTS ----------------- */
