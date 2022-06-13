@@ -142,12 +142,12 @@ const releaseAnimation = document.querySelectorAll('[data-animation]');
 experience.onclick = () => {
 	let property = getComputedStyle(experience).getPropertyValue('animation-play-state');
 	if(property === 'running, paused') {
-		experience.style.webkitAnimationPlayState = 'paused, running';
+		experience.style.animationPlayState = 'paused, running';
 	}
 	releaseAnimation.forEach((val,i,arr) => {
 		property = getComputedStyle(arr[i]).getPropertyValue('animation-play-state');
 		if(property === 'paused') {
-			arr[i].style.webkitAnimationPlayState = 'running';
+			arr[i].style.animationPlayState = 'running';
 		
 		}
 	});

@@ -221,6 +221,7 @@ button {
 	border-radius: 30px;
 	background-image: url(images/cool-bg.png);
 	background-repeat: no-repeat;
+	background-size: 100%;
 	padding: 8px;
 	overflow-y: scroll;
 	-ms-overflow-style: none;  /* IE and Edge */
@@ -465,17 +466,18 @@ button {
 	text-align: center;
 	cursor: pointer;
 	position: relative;
+	top: 200px;
 	z-index: var(--animation-btn);
 	animation: taunt 1500ms infinite alternate forwards, up 1000ms 100ms forwards paused;
 	-webkit-animation: taunt 1500ms infinite alternate forwards, up 1000ms 100ms forwards paused;
 }
 
 @keyframes up {
-	100% { transform: translateY(-135%); opacity: 1; }
+	100% { top: 0; opacity: 1; }
 }
 
 @-webkit-keyframes up {
-	100% { transform: translateY(-135%); opacity: 1; }
+	100% { top: 0; opacity: 1;  }
 }
 
 @keyframes taunt {
@@ -507,7 +509,7 @@ button {
 
 .animation-specification > h3, .animation-specification > p {
 	text-align: center;
-	width: 15%;
+	width: 200px;
 	opacity: 0;
 }
 
@@ -517,11 +519,11 @@ button {
 	text-align: center;
 	width: 100%;
 	position: relative;
-	right: 101px;
+	right: 102px;
 }
 
 .line {
-	width: 15%;
+	width: 203px;
 	height: 0;
 	border-right: 2px solid var(--primary-color);
 }
@@ -529,10 +531,11 @@ button {
 .animation-arrow {
 	display: flex;
 	justify-content: center;
+	width: 100%;
 }
 
 .arrow {
-	width: 15%;
+	width: 203px;
 }
 
 .spear {
@@ -780,6 +783,12 @@ button {
 @media only screen and (max-width: 539px) {
 	#play {
 		width: 350px;
+		text-align: center;
+		cursor: pointer;
+		position: relative;
+		z-index: var(--animation-btn);
+		animation: taunt 1500ms infinite alternate forwards, up 1000ms 100ms forwards paused;
+		-webkit-animation: taunt 1500ms infinite alternate forwards, up 1000ms 100ms forwards paused;
 	}
 
 	@keyframes up {
