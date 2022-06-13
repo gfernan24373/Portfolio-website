@@ -109,9 +109,13 @@ button {
 }
 
 .wrapper-options {
-	justify-content: center;
+	display: flex;
+	justify-content: space-evenly;
+	width: 700px;
+}
+
+#item-center {
 	width: 100%;
-	grid-column-gap: 30px;
 }
 
 .icon {
@@ -221,7 +225,7 @@ button {
 	border-radius: 30px;
 	background-image: url(images/cool-bg.png);
 	background-repeat: no-repeat;
-	background-size: 100%;
+	background-size: 100% 100%;
 	padding: 8px;
 	overflow-y: scroll;
 	-ms-overflow-style: none;  /* IE and Edge */
@@ -290,7 +294,7 @@ button {
 	}
 
 	.box-big {
-		height:90%;
+		height:75%;
 		margin-bottom: var(--space);
 	}
 
@@ -320,7 +324,7 @@ button {
 	"skill description description"
 	"skill description description";
 	width: 80%;
-	height: 400px;
+	height: 580px;
 	border: 5px solid var(--primary-color);
 	border-radius: 30px;
 }
@@ -356,7 +360,7 @@ button {
 }
 
 .certificate {
-	width: 50%;
+	width: 60%;
 	height: auto;
 	cursor: pointer;
 }
@@ -365,8 +369,6 @@ button {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	border-radius: 2rem;
-	background-color: var(--background);
 }
 .splide__track, .splide__list {
 	position: relative;
@@ -401,16 +403,19 @@ button {
 }
 
 .modal-container {
-	width: 70%;
+	width: 90%;
 	height: 90vh;
 	position: relative;
-	left: 15%;
+	left: 5%;
 	top: 5%;
 }
 
 .modal-img {
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	width: 100%;
-	height: 100%;
+	height: 90%;
 }
 
 .close {
@@ -443,8 +448,17 @@ button {
 	}
 
 	.certificate {
-		width: 90%;
+		width: 100%;
 	}
+
+	.modal-img {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+		height: 65%;
+	}
+
 }
 
 /*----------------- EXPERIENCE ----------------- */
@@ -567,14 +581,14 @@ button {
 	top: -20px;
 }
 
+.responsibilities > h1, .responsibilities ul > li {
+	opacity: 0;
+}
+
 .responsibilities-description {
 	display: grid;
 	text-align: left;
 	gap: 0.45rem;
-}
-
-.responsibilities :is(h1, li) {
-	opacity: 0;
 }
 
 /*DEFAULT ANIMATION SETTING*/
@@ -728,12 +742,14 @@ button {
 	--name: appear;
 	--duration: 1250ms;
 	--delay: 4500ms;
+	--playstate: paused;
 }
 
 [data-animation="responsibility-two"] {
 	--name: appear;
 	--duration: 1250ms;
 	--delay: 4700ms;
+
 }
 
 [data-animation="responsibility-three"] {
@@ -791,41 +807,36 @@ button {
 		-webkit-animation: taunt 1500ms infinite alternate forwards, up 1000ms 100ms forwards paused;
 	}
 
-	@keyframes up {
-		100% { transform: translateY(-218px); opacity: 1; }
-	}
-
-	@-webkit-keyframes up {
-		100% { transform: translateY(-218px); opacity: 1; }
-	}
-
 	.animation-specification {
-		display: grid;
-		justify-content: start;
-		grid-row-gap: 10px;
-		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: start;
+		width: 70%;
 		margin-left: 20px;
 	}
 
-	.animation-specification:nth-child(4) {
-		margin: 0;
-		position: absolute;
-		left: 200px;
-		top: -15px;
-		grid-row-gap: 13px;
+	.animation-specification > h3 {
+		text-align: left;
+		margin-bottom: 7px;
 	}
 
 	.animation-specification > p {
-		width: 150px;
+		margin-bottom: 13px;
+	}
+
+	.animation-specification:nth-child(4) {
+		position: absolute;
+		left: 157px;
+		top: -1px;
 	}
 
 	#parentesis {
-		font-size: 22vh;
+		font-size: 21vh;
 		font-weight: 400;
 		color: var(--primary-color);
 		position: absolute;
-		top: -230px;
-		left: 150px;
+		top: -185px;
+		left: 140px;
 	}
 
 	.animation-line, .animation-arrow {
@@ -834,7 +845,7 @@ button {
 
 	.responsibilities {
 		display: block;
-		top: 20px;
+		top: -15px;
 	}
 
 	.responsibilities-description {
