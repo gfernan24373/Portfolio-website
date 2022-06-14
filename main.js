@@ -8,7 +8,6 @@ dropdownIcon.addEventListener('click', () => {
 	
 	if(navOptions.classList.contains('wrapper-options')) {
 		navOptions.classList.toggle('show');
-		
 	} 
 	
 });
